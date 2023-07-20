@@ -6,7 +6,7 @@ last_digit=0
 if(number<0):
     last_digit=number%-10
 else:
-    number_digit=number%10
+    last_digit=number%10
 
 print("Last digit of {} is {}".format(number,last_digit),end="")
 
