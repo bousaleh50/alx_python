@@ -1,6 +1,6 @@
 def fibonacci_sequence(n):
    if(n==1):
-       return [1]
+       return [0]
    elif(n==0):
        return []
    sequence=[0,1]
