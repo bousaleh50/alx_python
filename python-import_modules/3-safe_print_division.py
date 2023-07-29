@@ -9,6 +9,5 @@ def safe_print_division(a,b):
         return result
 
 
-result=safe_print_division(a,b)
-print("{:d} / {:d} = {}".format(a,b,result))
+
     
