@@ -1,3 +1,14 @@
+"""_summary_
+
+    Raises:
+        TypeError: _description_
+        ValueError: _description_
+        TypeError: _description_
+        ValueError: _description_
+
+    Returns:
+        _type_: _description_
+    """
 class Square:
     def __init__(self, size=0):
         if(type(size) not in [int,float]):
