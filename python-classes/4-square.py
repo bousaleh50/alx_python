@@ -28,3 +28,4 @@ class Square:
             print("#"*self.__size)
 
 
+x=Square(10)
