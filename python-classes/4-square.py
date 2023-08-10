@@ -28,5 +28,3 @@ class Square:
             print("#"*self.__size)
 
 
-x=Square(10)
-x.my_print()
