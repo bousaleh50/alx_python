@@ -10,6 +10,11 @@
         _type_: _description_
     """
 class Square:
+    """_summary_
+       @property is a getter that reaturn the size of the square
+       @size.setter is set the size of the square to a new value
+       def my_print is printing the square
+    """
     def __init__(self, size=0):
         if(type(size) not in [int,float]):
             raise TypeError("size must be an integer")

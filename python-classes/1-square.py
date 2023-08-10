@@ -1,6 +1,14 @@
+"""_summary_
+
+    Raises:
+        TypeError: _description_
+        ValueError: _description_
+    """
 class Square:
+    """checking the size to be an integer
+    """
     def __init__(self, size=0):
-        if(type(size) not in [int,float]):
+        if(type(size)!=int):
             raise TypeError("size must be an integer")
         
         if(size<0):
