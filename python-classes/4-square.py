@@ -40,6 +40,9 @@ class Square:
         self.__size=value
     
     def my_print(self):
+        if(self.__size==0):
+            print("")
+            return
         for i in range(self.__size):
             print("#"*self.__size)
 
