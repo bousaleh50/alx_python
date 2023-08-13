@@ -1,4 +1,9 @@
-"""Module to implement a Square"""
+"""_summary_
+
+    Returns:
+        _type_: _description_
+    """
+
 Rectangle = __import__('7-rectangle').Rectangle
 
 
