@@ -1,36 +1,16 @@
-"""_summary_
-
-    Raises:
-        Exception: _description_
-        TypeError: _description_
-        ValueError: _description_
-
-    Returns:
-        _type_: _description_
-"""
+#!/usr/bin/python3
+"""Module to implement a Square"""
+Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """_summary_
-
-    Args:
-        Rectangle (_type_): _description_
-    """
+    """Class implementing a Square as a subclass of Rectangle"""
     def __init__(self, size):
-        """_summary_
-
-        Args:
-            size (_type_): _description_
-        """
-        self.__size = 0
+        """Initialize new Square instance"""
         self.integer_validator("size", size)
         self.__size = size
         super().__init__(size, size)
 
-    def __str__(self):
-        """_summary_
-
-        Returns:
-            _type_: _description_
-        """
-        return f"[Square] {self.__size}/{self.__size}"
+    def area(self):
+        """Compute area of Square instance"""
+        return self.__size ** 2
