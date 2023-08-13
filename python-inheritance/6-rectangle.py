@@ -1,14 +1,14 @@
-BaseGeometry = __import__('5-base_geometry').BaseGeometry
-
 """_summary_
 
     Raises:
         Exception: _description_
         TypeError: _description_
         ValueError: _description_
-    """
+"""
     
 
+
+BaseGeometry = __import__('5-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     """_summary_
