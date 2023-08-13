@@ -1,6 +1,9 @@
-"""_summary_
-    """
+"""
+ an empty class
+"""
 class BaseGeometry:
-    """_summary_
+    """
+    an empty class with the pass keyword
+    
     """
     pass
