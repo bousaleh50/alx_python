@@ -1,9 +1,7 @@
-"""
- an empty class
-"""
+#!/usr/bin/python3
+"""Module implementing BaseGeometry class"""
+
+
 class BaseGeometry:
-    """
-    an empty class with the pass keyword
-    
-    """
+    """Empty class"""
     pass
