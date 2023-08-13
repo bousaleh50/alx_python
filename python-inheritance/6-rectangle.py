@@ -1,4 +1,4 @@
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+BaseGeometry = __import__('5-base_geometry').BaseGeometry
 
 """_summary_
 
@@ -7,17 +7,8 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
         TypeError: _description_
         ValueError: _description_
     """
-class BaseGeometry:
-    """_summary_
-    """
-    def area(self):
-        raise Exception("area() is not implemented")
+    
 
-    def integer_validator(self, name, value):
-        if not isinstance(value, int):
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
 
 class Rectangle(BaseGeometry):
     """_summary_
@@ -35,4 +26,3 @@ class Rectangle(BaseGeometry):
         
 
 
-print(issubclass(Rectangle,BaseGeometry))
