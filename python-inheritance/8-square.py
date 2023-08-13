@@ -10,9 +10,6 @@
 """
 
 
-Rectangle=__import__("7-rectangle.py").Rectangle
-
-
 class Square(Rectangle):
     """_summary_
 
