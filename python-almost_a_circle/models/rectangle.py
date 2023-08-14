@@ -1,6 +1,6 @@
 """_summary_
 """
-Base=__import__("./base.py").Base
+Base=__import__("./base").Base
 
 class Rectangle(Base):
     """_summary_
