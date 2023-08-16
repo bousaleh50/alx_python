@@ -1,4 +1,5 @@
 """_summary_
+ the base class where other classes sshould inherit
 """
 
 class Base:
