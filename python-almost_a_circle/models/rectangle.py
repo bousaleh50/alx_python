@@ -1,6 +1,8 @@
 """_summary_
+  class rectangle inherite from class Base
 """
 Base=__import__("base").Base
+
 
 class Rectangle(Base):
     """_summary_
