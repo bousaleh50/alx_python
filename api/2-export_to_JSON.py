@@ -33,11 +33,11 @@ def get_employee_todo_progress(employee_id):
     total_tasks = len(todo_data)
 
     # Display employee TODO list progress
-    print(f"Employee {employee_data['name']} is done with tasks ({num_completed_tasks}/{total_tasks}):")
+    print(f"Employee {employee_data['name']} is done with tasks({num_completed_tasks}/{total_tasks}):")
 
     # Display titles of completed tasks
     for task in completed_tasks:
-        print(f"\t{task['title']}")
+        print(f"\t {task['title']}")
 
      # Export data to JSON
     json_filename = f"{employee_id}.json"
