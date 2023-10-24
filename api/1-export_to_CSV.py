@@ -1,4 +1,5 @@
 import csv
+import os
 import requests
 import sys
 
@@ -40,6 +41,8 @@ def get_employee_todo_progress(employee_id):
         print(f"\t {task['title']}")
 
     csv_filename = f"{employee_id}.csv"
+    
+
     with open(csv_filename, "w", newline='') as csvfile:
         csv_writer = csv.writer(csvfile)
         ##csv_writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
