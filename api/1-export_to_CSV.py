@@ -50,5 +50,5 @@ def get_employee_todo_progress(employee_id):
             csv_writer.writerow([employee_id, employee_data['username'], task['completed'], task['title']])
 
 if __name__ == "__main__":
-    employee_id = sys.argv[1]
+    employee_id = int(sys.argv[1])
     get_employee_todo_progress(employee_id)
