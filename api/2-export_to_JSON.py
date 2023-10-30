@@ -1,3 +1,8 @@
+"""
+  fetching data from an api and make it as a json file
+"""
+
+
 import json
 import requests
 import sys
