@@ -46,8 +46,11 @@ def get_employee_todo_progress(employee_id):
         csv_writer = csv.writer(csvfile)
         ##csv_writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
         for task in todo_data:
-            csv_writer.writerow([employee_id, employee_data['username'], task['completed'], task['title']])
-
+            employee_id_str = f'"{employee_id}"'
+            username_str = f'"{employee_data["username"]}"'
+            completed_str = f'"{str(task["completed"])}"'
+            title_str = f'"{task["title"]}"'
+            csv_writer.writerow([employee_id_str, username_str, completed_str, title_str])
 if __name__ == "__main__":
     employee_id = sys.argv[1]
     get_employee_todo_progress(employee_id)
