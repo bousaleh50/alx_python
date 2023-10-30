@@ -7,48 +7,46 @@ import json
 import requests
 import sys
 
+def get_employee_data(employee_id):
+    # Define the API endpoints
+    user_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}'
+    todos_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}/todos'
 
-def get_employee_todo_progress(employee_id):
-    # Define the base URL for the API
-    base_url = "https://jsonplaceholder.typicode.com"
+    # Get employee details
+    user_response = requests.get(user_url)
+    user_data = user_response.json()
+    employee_name = user_data.get('name')
 
-    # Create the URLs for employee details and their TODO list
-    employee_url = f"{base_url}/users/{employee_id}"
-    todo_url = f"{base_url}/users/{employee_id}/todos"
+    # Get TODO list for the employee
+    todos_response = requests.get(todos_url)
+    todos_data = todos_response.json()
 
-    # Send a GET request to the employee details endpoint
-    employee_response = requests.get(employee_url)
-    employee_data = employee_response.json()
+    # Calculate the number of completed tasks and total tasks
+    completed_tasks = [task for task in todos_data if task['completed']]
+    total_tasks = len(todos_data)
 
-    if employee_response.status_code != 200:
-        print(f"Error: Unable to retrieve employee details for ID {employee_id}")
-        return
-
-    # Send a GET request to the TODO list endpoint
-    todo_response = requests.get(todo_url)
-    todo_data = todo_response.json()
-
-    if todo_response.status_code != 200:
-        print(f"Error: Unable to retrieve TODO list for employee ID {employee_id}")
-        return
-
-    # Calculate the number of completed and total tasks
-    completed_tasks = [task for task in todo_data if task["completed"]]
-    num_completed_tasks = len(completed_tasks)
-    total_tasks = len(todo_data)
-
-    # Display employee TODO list progress
-    print(f"Employee {employee_data['name']} is done with tasks({num_completed_tasks}/{total_tasks}):")
-
-    # Display titles of completed tasks
+    # Print the employee's progress
+    print(f"Employee {employee_name} is done with tasks({len(completed_tasks)}/{total_tasks}):")
     for task in completed_tasks:
-        print(f"\t {task['title']}")
+        print(f"\t{task['title']}")
 
-     # Export data to JSON
-    json_filename = f"{employee_id}.json"
-    with open(json_filename, "w") as json_file:
-        json.dump({"USER_ID": tasks}, json_file, indent=4)
+    # Export data to JSON file
+    export_data = {str(employee_id): [
+        {
+            "task": task["title"],
+            "completed": task["completed"],
+            "username": employee_name
+        }
+        for task in todos_data
+    ]}
 
-if __name__ == "__main__":
-    employee_id = sys.argv[1]
-    get_employee_todo_progress(employee_id)
+    json_filename = f'{employee_id}.json'
+    with open(json_filename, 'w') as json_file:
+        json.dump(export_data, json_file, indent=4)
+
+if __name__ == '__main__':
+    if len(sys.argv) != 2:
+        sys.exit(1)
+
+    employee_id = int(sys.argv[1])
+    get_employee_data(employee_id)
